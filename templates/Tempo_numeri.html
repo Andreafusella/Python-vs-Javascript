@@ -7,22 +7,24 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style/output.css') }}">
 </head>
 <body class="bg-gray-300">
-    <script src="javascript.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <h1 class="text-[50px] text-black text-center my-5">JavaScript Vs Python</h1>
+    <div class="flex gap-5 justify-center items-center">
+      <h1 class="text-[50px] text-black text-center my-5">JavaScript Vs Python</h1>
+      <a href="{{ url_for('second_page') }}" class="btn btn-info ">Seconda pagina</a>
+    </div>
     <div class="flex justify-center">
       <div class="w-[75%] bg-gray-400 rounded-3xl">
         <div class="ml-[200px] mr-[200px] flex justify-between">
           <div id="chart" class="w-[250px] h-[200px] mt-10"></div>
-          <h1 class="text-4xl flex felx-col items-center">1000 Numeri</h1>
+          <h1 class="text-4xl flex felx-col items-center text-black">1000 Numeri</h1>
         </div>
         <div class="ml-[200px] mr-[200px] flex justify-between">
-          <h1 class="text-4xl flex felx-col items-center">100.000 Numeri</h1>
+          <h1 class="text-4xl flex felx-col items-center text-black">100.000 Numeri</h1>
           <div id="chart2" class="w-[250px] mt-10"></div>
         </div>
         <div class="ml-[200px] mr-[200px] flex justify-between">
           <div id="chart3" class="w-[250px] h-[200px] mt-10"></div>
-          <h1 class="text-4xl flex felx-col items-center">1.000.000 Numeri</h1>
+          <h1 class="text-4xl flex felx-col items-center text-black">1.000.000 Numeri</h1>
         </div>
       </div>
     </div>
