@@ -8,13 +8,19 @@ function posizionamento(n, lista) {
         let tempoTotale = tempoFine - tempoInizio;
         somma += tempoTotale;
     }
-    console.log((somma / 1000).toFixed(4));
+    return((somma / 1000).toFixed(3));
 }
 
 let lista0_1000 = [];
 let lista0_100000 = [];
 let lista0_mil = [];
 
-posizionamento(1000, lista0_1000);
-posizionamento(100000, lista0_100000);
-posizionamento(10000000, lista0_mil);
+var tempo_1000 = posizionamento(1000, lista0_1000, document.getElementById("risultati-lista-1000"));
+var tempo_100000 = posizionamento(100000, lista0_100000);
+var tempo_mil = posizionamento(1000000, lista0_mil);
+
+console.log(tempo_1000);
+console.log(tempo_100000);
+console.log(tempo_mil);
+
+

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risultati</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/output.css') }}">
+</head>
+<body class="bg-gray-300">
+    <script src="javascript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <h1 class="text-[50px] text-black text-center my-5">JavaScript Vs Python</h1>
+    <div class="flex justify-center">
+      <div class="w-[75%] bg-gray-400 rounded-3xl">
+        <div class="ml-[200px] mr-[200px] flex justify-between">
+          <div id="chart" class="w-[250px] h-[200px] mt-10"></div>
+          <h1 class="text-4xl flex felx-col items-center">1000 Numeri</h1>
+        </div>
+        <div class="ml-[200px] mr-[200px] flex justify-between">
+          <h1 class="text-4xl flex felx-col items-center">100.000 Numeri</h1>
+          <div id="chart2" class="w-[250px] mt-10"></div>
+        </div>
+        <div class="ml-[200px] mr-[200px] flex justify-between">
+          <div id="chart3" class="w-[250px] h-[200px] mt-10"></div>
+          <h1 class="text-4xl flex felx-col items-center">1.000.000 Numeri</h1>
+        </div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='script/javascript.js') }}"></script>
+
+    <!-- Grafico fino a 1000 -->
+    <script>
+        var python1000 = parseFloat("{{tempo_1000}}");
+
+        var options = {
+          series: [{
+          name: 'Inflation',
+          data: [tempo_1000, python1000]
+        }],
+          chart: {
+          height: 250,
+          type: 'bar',
+        },
+        plotOptions: {
+          bar: {
+            borderRadius: 10,
+            dataLabels: {
+              position: 'top', // top, center, bottom
+            },
+          }
+        },
+        dataLabels: {
+          enabled: true,
+          formatter: function (val) {
+            return val;
+          },
+          offsetY: -20,
+          style: {
+            fontSize: '12px',
+            colors: ["#304758"]
+          }
+        },
+        
+        xaxis: {
+          categories: ["Javascript", "Python",],
+          position: 'top',
+          axisBorder: {
+            show: false
+          },
+          axisTicks: {
+            show: false
+          },
+          crosshairs: {
+            fill: {
+              type: 'gradient',
+              gradient: {
+                colorFrom: '#D8E3F0',
+                colorTo: '#BED1E6',
+                stops: [0, 100],
+                opacityFrom: 0.4,
+                opacityTo: 0.5,
+              }
+            }
+          },
+          tooltip: {
+            enabled: true,
+          }
+        },
+        yaxis: {
+          max: python1000 + 0.01,
+          axisBorder: {
+            show: false
+          },
+          axisTicks: {
+            show: false,
+          },
+          labels: {
+            show: false,
+            formatter: function (val) {
+              return val;
+            }
+          }
+        
+        },
+        title: {
+          
+          floating: true,
+          offsetY: 330,
+          align: 'center',
+          style: {
+            color: '#444'
+          }
+        }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+    
+    </script>
+    <!-- Grafico fino a 100.000 -->
+    <script>
+      var python100000 = parseFloat("{{tempo_100000}}");
+      var options = {
+        series: [{
+        name: 'Inflation',
+        data: [tempo_100000, python100000]
+      }],
+        chart: {
+        height: 250,
+        type: 'bar',
+      },
+      plotOptions: {
+        bar: {
+          borderRadius: 10,
+          dataLabels: {
+            position: 'top', // top, center, bottom
+          },
+        }
+      },
+      dataLabels: {
+        enabled: true,
+        formatter: function (val) {
+          return val;
+        },
+        offsetY: -20,
+        style: {
+          fontSize: '12px',
+          colors: ["#304758"]
+        }
+      },
+      
+      xaxis: {
+        categories: ["Javascript", "Python",],
+        position: 'top',
+        axisBorder: {
+          show: false
+        },
+        axisTicks: {
+          show: false
+        },
+        crosshairs: {
+          fill: {
+            type: 'gradient',
+            gradient: {
+              colorFrom: '#D8E3F0',
+              colorTo: '#BED1E6',
+              stops: [0, 100],
+              opacityFrom: 0.4,
+              opacityTo: 0.5,
+            }
+          }
+        },
+        tooltip: {
+          enabled: true,
+        }
+      },
+      yaxis: {
+        axisBorder: {
+          show: false
+        },
+        axisTicks: {
+          show: false,
+        },
+        labels: {
+          show: false,
+          formatter: function (val) {
+            return val;
+          }
+        }
+      
+      },
+      title: {
+        
+        floating: true,
+        offsetY: 330,
+        align: 'center',
+        style: {
+          color: '#444'
+        }
+      }
+      };
+
+      var chart = new ApexCharts(document.querySelector("#chart2"), options);
+      chart.render();
+    </script>
+    <!-- Grafico fino a 1.000.000 -->
+    <script>
+      var python_mil = parseFloat("{{tempo_mil}}");
+      var options = {
+        series: [{
+        name: 'Inflation',
+        data: [tempo_mil, python_mil]
+      }],
+        chart: {
+        height: 250,
+        type: 'bar',
+      },
+      plotOptions: {
+        bar: {
+          borderRadius: 10,
+          dataLabels: {
+            position: 'top', // top, center, bottom
+          },
+        }
+      },
+      dataLabels: {
+        enabled: true,
+        formatter: function (val) {
+          return val;
+        },
+        offsetY: -20,
+        style: {
+          fontSize: '12px',
+          colors: ["#304758"]
+        }
+      },
+      
+      xaxis: {
+        categories: ["Javascript", "Python",],
+        position: 'top',
+        axisBorder: {
+          show: false
+        },
+        axisTicks: {
+          show: false
+        },
+        crosshairs: {
+          fill: {
+            type: 'gradient',
+            gradient: {
+              colorFrom: '#D8E3F0',
+              colorTo: '#BED1E6',
+              stops: [0, 100],
+              opacityFrom: 0.4,
+              opacityTo: 0.5,
+            }
+          }
+        },
+        tooltip: {
+          enabled: true,
+        }
+      },
+      yaxis: {
+        axisBorder: {
+          show: false
+        },
+        axisTicks: {
+          show: false,
+        },
+        labels: {
+          show: false,
+          formatter: function (val) {
+            return val;
+          }
+        }
+      
+      },
+      title: {
+        
+        floating: true,
+        offsetY: 330,
+        align: 'center',
+        style: {
+          color: '#444'
+        }
+      }
+      };
+
+      var chart = new ApexCharts(document.querySelector("#chart3"), options);
+      chart.render();
+  </script>
+  
+</body>
+</html>
