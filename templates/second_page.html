@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parametrizzato</title>
+    <title>Pagina Iniziale</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style/output.css') }}">
 </head>
 <body class="bg-gray-300 h-[1000px]">
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <div class="flex justify-center pt-10">
+
+      <h1 class="text-[70px] text-black">Javascript vs Python</h1>
+    </div>
     <div class="flex justify-center">
-        <div class="w-[75%] bg-gray-400 rounded-3xl mt-20">
+        <div class="w-[75%] bg-gray-400 rounded-3xl mt-10">
           <div class="ml-[200px] mr-[200px] flex justify-between my-10">
             <a href="{{ url_for('second_page_1000') }}" class="btn btn-info text-slate-800">1000</a>
             <a href="{{ url_for('second_page_100000') }}" class="btn btn-info text-slate-800">100.000</a>
@@ -29,17 +33,20 @@
             {% if flag == 1000000 %}
                 <div id="chart3"></div>
             {% endif %}
+        {% else %}
+          <h1 class="text-4xl text-center text-black">Clicca su un numero per vedere le tempistiche di generazione e inserimento dentro ad un array o lista</h1>
         {% endif %}
         
 
     </div>
     <script src="{{ url_for('static', filename='script/javascript.js') }}"></script>
+    <!-- fino a 1000 -->
     <script>
-        var tempo_python = parseFloat("{{tempo_totale}}");
+        var tempo_python = parseFloat("{{tempo_totale}}").toFixed(4);
         var options = {
           series: [{
-          name: 'Inflation',
-          data: [2.3, tempo_python]
+          name: 'Time',
+          data: [tempo_1000, tempo_python]
         }],
           chart: {
           height: 350,
@@ -106,7 +113,7 @@
         
         },
         title: {
-          text: 'Monthly Inflation in Argentina, 2002',
+          text: 'Generazione numeri fino a 1000',
           floating: true,
           offsetY: 330,
           align: 'center',
@@ -120,11 +127,13 @@
         chart.render();
     
     </script>
+    <!-- fino a 100.000 -->
     <script>
+        var tempo_python = parseFloat("{{tempo_totale}}").toFixed(3);
         var options = {
           series: [{
-          name: 'Inflation',
-          data: [2.3, 2.1]
+          name: 'Time',
+          data: [tempo_100000, tempo_python]
         }],
           chart: {
           height: 350,
@@ -191,7 +200,7 @@
         
         },
         title: {
-          text: 'Monthly Inflation in Argentina, 2002',
+          text: 'Generazione numeri fino a 100.000',
           floating: true,
           offsetY: 330,
           align: 'center',
@@ -205,11 +214,13 @@
         chart.render();
     
     </script>
+    <!-- fino a 1.000.000 -->
     <script>
+        var tempo_python = parseFloat("{{tempo_totale}}").toFixed(3);
         var options = {
           series: [{
-          name: 'Inflation',
-          data: [2.3, 1.1]
+          name: 'Time',
+          data: [tempo_milione, tempo_python]
         }],
           chart: {
           height: 350,
@@ -276,7 +287,7 @@
         
         },
         title: {
-          text: 'Monthly Inflation in Argentina, 2002',
+          text: 'Generazione numeri fino a 1.000.000',
           floating: true,
           offsetY: 330,
           align: 'center',

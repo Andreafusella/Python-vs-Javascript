@@ -1183,9 +1183,9 @@ html {
   position: static;
 }
 
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .my-10 {
@@ -1193,9 +1193,9 @@ html {
   margin-bottom: 2.5rem;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .ml-\[200px\] {
@@ -1214,52 +1214,32 @@ html {
   margin-top: 5rem;
 }
 
-.flex {
-  display: flex;
+.block {
+  display: block;
 }
 
-.h-\[200px\] {
-  height: 200px;
+.flex {
+  display: flex;
 }
 
 .h-\[1000px\] {
   height: 1000px;
 }
 
-.h-\[150px\] {
-  height: 150px;
+.h-\[200px\] {
+  height: 200px;
 }
 
 .w-\[250px\] {
   width: 250px;
 }
 
-.w-\[75\%\] {
-  width: 75%;
-}
-
-.w-\[\] {
-  width: ;
-}
-
-.w-\[500px\] {
-  width: 500px;
-}
-
-.w-\[150px\] {
-  width: 150px;
-}
-
-.w-\[300px\] {
-  width: 300px;
-}
-
-.w-\[70\%\] {
-  width: 70%;
-}
-
 .w-\[50\%\] {
   width: 50%;
+}
+
+.w-\[75\%\] {
+  width: 75%;
 }
 
 .flex-col {
@@ -1296,6 +1276,10 @@ html {
   background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
 
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1309,6 +1293,15 @@ html {
   font-size: 50px;
 }
 
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.text-\[70px\] {
+  font-size: 70px;
+}
+
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -1317,4 +1310,8 @@ html {
 .text-slate-800 {
   --tw-text-opacity: 1;
   color: rgb(30 41 59 / var(--tw-text-opacity));
+}
+
+.text-\[\] {
+  color: ;
 }
