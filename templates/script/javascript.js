@@ -49,7 +49,7 @@ function posizionamento_100000() {
 	// 	}
 	// }
     // let tempofinebubble = performance.now();
-    // let tempototaleBubble = tempofinebubble - tempoiniziobubble
+    // let tempototaleBubble = ((tempofinebubble - tempoiniziobubble)/1000).toFixed(5)
     // dati.push(tempototaleBubble)
 	return(dati);
 }
@@ -90,6 +90,7 @@ var dati_100000 = posizionamento_100000()
 let tempo_100000 = dati_100000[0]
 let tempo_100000_bubble = dati_100000[1]
 console.log(tempo_100000);
+console.log(tempo_100000_bubble);
 
 var dati_milione = posizionamento_milione()
 let tempo_milione = dati_milione[0]
